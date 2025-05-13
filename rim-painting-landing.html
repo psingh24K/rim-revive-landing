@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rim Revive - Premium Rim Painting</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #222831;
+      --secondary: #393e46;
+      --accent: #00adb5;
+      --light: #eeeeee;
+      --white: #fff;
+      --shadow: 0 4px 24px rgba(0,0,0,0.12);
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: var(--light);
+      color: var(--primary);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--primary);
+      color: var(--white);
+      padding: 2rem 0 6rem 0;
+      text-align: center;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: var(--accent);
+      margin-bottom: 2rem;
+    }
+    .cta-btn {
+      background: var(--accent);
+      color: var(--white);
+      padding: 0.9rem 2.2rem;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      text-decoration: none;
+      display: inline-block;
+    }
+    .cta-btn:hover {
+      background: #00868b;
+    }
+    main {
+      max-width: 1100px;
+      margin: -4rem auto 0 auto;
+      background: var(--white);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 2.5rem 2rem 3rem 2rem;
+      position: relative;
+      z-index: 2;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 1.2rem;
+      text-align: center;
+    }
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .service-card {
+      background: var(--light);
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      padding: 1.5rem 1.2rem;
+      flex: 1 1 220px;
+      max-width: 300px;
+      text-align: center;
+      transition: transform 0.18s;
+    }
+    .service-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+    }
+    .service-card i {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 0.7rem;
+      display: block;
+    }
+    .service-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .service-card p {
+      font-size: 1rem;
+      color: var(--secondary);
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      object-fit: cover;
+      height: 180px;
+      transition: transform 0.18s;
+    }
+    .gallery img:hover {
+      transform: scale(1.04);
+    }
+    .contact-form {
+      max-width: 500px;
+      margin: 0 auto;
+      background: var(--light);
+      padding: 2rem 1.5rem;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .contact-form label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+      color: var(--secondary);
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.7rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      background: var(--white);
+      resize: none;
+    }
+    .contact-form button {
+      width: 100%;
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      padding: 0.9rem;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .contact-form button:hover {
+      background: #00868b;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 0 1rem 0;
+      color: var(--secondary);
+      font-size: 1rem;
+      background: transparent;
+    }
+    @media (max-width: 700px) {
+      main {
+        padding: 1.2rem 0.5rem 2rem 0.5rem;
+      }
+      .services {
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+      .gallery img {
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Rim Revive</h1>
+    <p>Premium Rim Painting & Restoration</p>
+    <a href="#contact" class="cta-btn">Get a Free Quote</a>
+  </header>
+  <main>
+    <section id="services">
+      <h2 class="section-title">Our Services</h2>
+      <div class="services">
+        <div class="service-card">
+          <i>🎨</i>
+          <h3>Custom Rim Painting</h3>
+          <p>Transform your wheels with vibrant, durable colors and finishes. Choose from gloss, matte, or metallic.</p>
+        </div>
+        <div class="service-card">
+          <i>🛠️</i>
+          <h3>Rim Repair</h3>
+          <p>We fix curb rash, scratches, and chips to restore your rims to like-new condition before painting.</p>
+        </div>
+        <div class="service-card">
+          <i>✨</i>
+          <h3>Protective Coating</h3>
+          <p>Long-lasting ceramic and clear coats to protect your rims from the elements and road debris.</p>
+        </div>
+      </div>
+    </section>
+    <section id="gallery">
+      <h2 class="section-title">Gallery</h2>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=400&q=80" alt="Painted Rim 1">
+        <img src="https://images.unsplash.com/photo-1511918984145-48de785d4c4e?auto=format&fit=crop&w=400&q=80" alt="Painted Rim 2">
+        <img src="https://images.unsplash.com/photo-1465146344425-f00d5f8b7885?auto=format&fit=crop&w=400&q=80" alt="Painted Rim 3">
+        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=400&q=80" alt="Painted Rim 4">
+      </div>
+    </section>
+    <section id="contact">
+      <h2 class="section-title">Contact Us</h2>
+      <form class="contact-form" autocomplete="off">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    &copy; 2024 Rim Revive. All rights reserved.
+  </footer>
+</body>
+</html> 
