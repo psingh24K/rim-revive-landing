@@ -193,9 +193,55 @@
         height: 120px;
       }
     }
+    .hero {
+      background: linear-gradient(120deg, var(--primary) 60%, var(--accent) 100%);
+      color: var(--white);
+      padding: 4.5rem 0 3.5rem 0;
+      text-align: center;
+      position: relative;
+      box-shadow: var(--shadow);
+      margin-bottom: -3rem;
+      z-index: 3;
+    }
+    .hero-content {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .hero-headline {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      margin-bottom: 1.1rem;
+      line-height: 1.15;
+    }
+    .hero-subheader {
+      font-size: 1.3rem;
+      color: var(--light);
+      margin-bottom: 2.2rem;
+      font-weight: 500;
+    }
+    @media (max-width: 700px) {
+      .hero {
+        padding: 2.5rem 0 1.5rem 0;
+      }
+      .hero-headline {
+        font-size: 2rem;
+      }
+      .hero-subheader {
+        font-size: 1.05rem;
+      }
+    }
   </style>
 </head>
 <body>
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-headline">Transform Your Ride with Stunning Rims</h1>
+      <p class="hero-subheader">Expert rim painting, repair, and protection for a bold, refreshed look. Drive in style and confidence!</p>
+      <a href="#contact" class="cta-btn">Get a Free Quote</a>
+    </div>
+  </section>
   <header>
     <h1>Rim Revive</h1>
     <p>Premium Rim Painting & Restoration</p>
