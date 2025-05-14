@@ -3,431 +3,1165 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rim Revive - Premium Rim Painting</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Rim Revive offers premium rim painting, repair, and restoration services. Transform your wheels with custom finishes and protective coatings for a stunning, durable look.">
+  <title>Rim Revive - Premium Rim Painting & Restoration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #222831;
-      --secondary: #393e46;
-      --accent: #00adb5;
-      --light: #eeeeee;
-      --white: #fff;
-      --shadow: 0 4px 24px rgba(0,0,0,0.12);
+      --primary: #1e293b; /* Slate 800 */
+      --secondary: #334155; /* Slate 700 */
+      --accent: #0891b2; /* Cyan 600 */
+      --accent-light: #22d3ee; /* Cyan 400 */
+      --light: #f8fafc; /* Slate 50 */
+      --light-alt: #e2e8f0; /* Slate 200 */
+      --dark: #0f172a; /* Slate 900 */
+      --white: #ffffff;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
+      --radius: 12px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
+
+    [data-theme="dark"] {
+      --primary: #0f172a;
+      --secondary: #1e293b;
+      --accent: #0ea5e9; /* Sky 500 */
+      --accent-light: #38bdf8; /* Sky 400 */
+      --light: #1e293b;
+      --light-alt: #334155;
+      --dark: #f8fafc;
+      --white: #0f172a;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+
     body {
-      font-family: 'Montserrat', Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       background: var(--light);
-      color: var(--primary);
-      line-height: 1.6;
+      color: var(--dark);
+      line-height: 1.7;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* HEADER */
     header {
-      background: var(--primary);
-      color: var(--white);
-      padding: 2rem 0 6rem 0;
-      text-align: center;
-      position: relative;
-      box-shadow: var(--shadow);
-    }
-    header h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: var(--accent);
-      margin-bottom: 2rem;
-    }
-    .cta-btn {
-      background: var(--accent);
-      color: var(--white);
-      padding: 0.9rem 2.2rem;
-      border: none;
-      border-radius: 30px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background 0.2s;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      text-decoration: none;
-      display: inline-block;
-    }
-    .cta-btn:hover {
-      background: #00868b;
-    }
-    main {
-      max-width: 1100px;
-      margin: -4rem auto 0 auto;
       background: var(--white);
-      border-radius: 18px;
       box-shadow: var(--shadow);
-      padding: 2.5rem 2rem 3rem 2rem;
-      position: relative;
-      z-index: 2;
-    }
-    section {
-      margin-bottom: 3rem;
-    }
-    .section-title {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--secondary);
-      margin-bottom: 1.2rem;
-      text-align: center;
-    }
-    .services {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-    }
-    .service-card {
-      background: var(--light);
-      border-radius: 14px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-      padding: 1.5rem 1.2rem;
-      flex: 1 1 220px;
-      max-width: 300px;
-      text-align: center;
-      transition: transform 0.18s;
-    }
-    .service-card:hover {
-      transform: translateY(-6px) scale(1.03);
-      box-shadow: 0 6px 24px rgba(0,0,0,0.10);
-    }
-    .service-card i {
-      font-size: 2.5rem;
-      color: var(--accent);
-      margin-bottom: 0.7rem;
-      display: block;
-    }
-    .service-card h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-    .service-card p {
-      font-size: 1rem;
-      color: var(--secondary);
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.2rem;
-      margin-top: 1.5rem;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-      object-fit: cover;
-      height: 180px;
-      transition: transform 0.18s;
-    }
-    .gallery img:hover {
-      transform: scale(1.04);
-    }
-    .contact-form {
-      max-width: 500px;
-      margin: 0 auto;
-      background: var(--light);
-      padding: 2rem 1.5rem;
-      border-radius: 14px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-    }
-    .contact-form label {
-      display: block;
-      margin-bottom: 0.4rem;
-      font-weight: 600;
-      color: var(--secondary);
-    }
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 0.7rem;
-      margin-bottom: 1.2rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-family: inherit;
-      background: var(--white);
-      resize: none;
-    }
-    .contact-form button {
-      width: 100%;
-      background: var(--accent);
-      color: var(--white);
-      border: none;
-      padding: 0.9rem;
-      border-radius: 30px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .contact-form button:hover {
-      background: #00868b;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem 0 1rem 0;
-      color: var(--secondary);
-      font-size: 1rem;
-      background: transparent;
-    }
-    @media (max-width: 700px) {
-      main {
-        padding: 1.2rem 0.5rem 2rem 0.5rem;
-      }
-      .services {
-        flex-direction: column;
-        gap: 1.2rem;
-      }
-      .gallery img {
-        height: 120px;
-      }
-    }
-    .hero {
-      background: linear-gradient(120deg, var(--primary) 60%, var(--accent) 100%);
-      color: var(--white);
-      padding: 4.5rem 0 3.5rem 0;
-      text-align: center;
-      position: relative;
-      box-shadow: var(--shadow);
-      margin-bottom: -3rem;
-      z-index: 3;
-    }
-    .hero-content {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-    .hero-headline {
-      font-size: 2.8rem;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      margin-bottom: 1.1rem;
-      line-height: 1.15;
-    }
-    .hero-subheader {
-      font-size: 1.3rem;
-      color: var(--light);
-      margin-bottom: 2.2rem;
-      font-weight: 500;
-    }
-    @media (max-width: 700px) {
-      .hero {
-        padding: 2.5rem 0 1.5rem 0;
-      }
-      .hero-headline {
-        font-size: 2rem;
-      }
-      .hero-subheader {
-        font-size: 1.05rem;
-      }
-    }
-    .theme-toggle {
       position: fixed;
-      top: 22px;
-      right: 28px;
-      z-index: 100;
-      background: var(--secondary);
-      color: var(--accent);
-      border: none;
-      border-radius: 50%;
-      width: 44px;
-      height: 44px;
-      font-size: 1.5rem;
-      cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-      transition: background 0.2s, color 0.2s;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    .nav-container {
       display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .theme-toggle:hover {
-      background: var(--accent);
-      color: var(--white);
-    }
-    @media (max-width: 700px) {
-      .theme-toggle {
-        top: 12px;
-        right: 12px;
-        width: 38px;
-        height: 38px;
-        font-size: 1.1rem;
-      }
-    }
-    .footer-content {
-      display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      max-width: 1100px;
-      margin: 0 auto 0 auto;
-      padding: 0.5rem 1rem 0.5rem 1rem;
+      height: 80px;
     }
-    .footer-contact {
-      font-size: 1rem;
-      color: var(--secondary);
-      margin-bottom: 0.5rem;
-    }
-    .footer-social {
+
+    .logo {
       display: flex;
-      gap: 1.1rem;
-    }
-    .footer-icon {
-      font-size: 1.5rem;
-      color: var(--accent);
+      align-items: center;
+      gap: 10px;
       text-decoration: none;
-      transition: color 0.2s;
     }
-    .footer-icon:hover {
-      color: var(--secondary);
+
+    .logo-icon {
+      font-size: 2rem;
+      color: var(--accent);
+      transition: transform 0.3s ease;
     }
-    .footer-copy {
+    .logo:hover .logo-icon {
+      transform: rotate(360deg);
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--accent);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover {
+      color: var(--accent);
+    }
+
+    .nav-link:hover:after {
+      width: 100%;
+    }
+    
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: var(--primary);
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      padding: 200px 0 120px; /* Increased padding */
+      background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+      overflow: hidden;
+      margin-top: 80px; /* Account for fixed header */
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(8, 145, 178, 0.1) 0%, transparent 40%);
+      animation: pulse 10s infinite linear;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .hero-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-headline {
+      font-size: 3.8rem; /* Increased size */
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .hero-headline span {
+      color: var(--accent-light);
+      text-shadow: 0 0 15px rgba(34, 211, 238, 0.5);
+    }
+
+    .hero-subheader {
+      font-size: 1.25rem; /* Increased size */
+      color: var(--light-alt);
+      margin-bottom: 2.5rem;
+      max-width: 700px;
+      animation: fadeInUp 1s 0.2s ease forwards;
+      opacity: 0; /* Start hidden for animation */
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1.5rem; /* Increased gap */
+      animation: fadeInUp 1s 0.4s ease forwards;
+      opacity: 0; /* Start hidden for animation */
+    }
+
+    .btn {
+      padding: 1rem 2.5rem; /* Increased padding */
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      text-align: center;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      outline: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--white);
+      box-shadow: 0 5px 15px rgba(8, 145, 178, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-light);
+      transform: translateY(-4px) scale(1.03); /* Enhanced hover */
+      box-shadow: 0 10px 20px rgba(8, 145, 178, 0.4);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--light-alt);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-light);
+      color: var(--accent-light);
+      background: rgba(34, 211, 238, 0.1); /* Subtle background on hover */
+      transform: translateY(-4px) scale(1.03);
+    }
+
+    /* SECTIONS COMMON STYLES */
+    .section {
+      padding: 100px 0;
+      position: relative;
+    }
+    .section-hidden {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .section-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-title {
+      font-size: 2.8rem; /* Increased size */
+      font-weight: 700;
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px; /* Adjusted position */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px; /* Increased width */
+      height: 4px; /* Increased height */
+      background: var(--accent);
+      border-radius: 100px;
+    }
+
+    .section-subtitle {
       text-align: center;
       color: var(--secondary);
-      font-size: 0.98rem;
-      margin-top: 0.7rem;
-      padding-bottom: 0.5rem;
+      font-size: 1.15rem; /* Increased size */
+      margin-bottom: 4.5rem; /* Increased margin */
+      max-width: 750px; /* Increased width */
+      margin-left: auto;
+      margin-right: auto;
     }
-    @media (max-width: 700px) {
-      .footer-content {
+
+    /* SERVICES SECTION */
+    .services {
+      background: var(--white);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Adjusted minmax */
+      gap: 2.5rem; /* Increased gap */
+    }
+
+    .service-card {
+      background: var(--light);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+      z-index: 1;
+      border-left: 4px solid transparent;
+    }
+
+    .service-card:hover {
+      transform: translateY(-12px) scale(1.02); /* Enhanced hover */
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+      border-left-color: var(--accent);
+    }
+
+    .service-icon {
+      font-size: 3.5rem; /* Increased size */
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      display: block;
+      text-align: center; /* Centered icon */
+    }
+
+    .service-content {
+      padding: 2.5rem; /* Increased padding */
+    }
+
+    .service-title {
+      font-size: 1.5rem; /* Increased size */
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      text-align: center; /* Centered title */
+    }
+
+    .service-description {
+      color: var(--secondary);
+      margin-bottom: 1.5rem;
+      text-align: center; /* Centered description */
+      min-height: 80px; /* Ensure consistent card height */
+    }
+
+    .service-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      display: flex; /* Use flex for centering */
+      align-items: center;
+      justify-content: center; /* Center link */
+      transition: var(--transition);
+      gap: 0.3rem;
+    }
+
+    .service-link:hover {
+      color: var(--accent-light);
+      transform: translateX(3px);
+    }
+
+    /* GALLERY SECTION */
+    .gallery {
+      background: var(--light);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      aspect-ratio: 1 / 1;
+      cursor: pointer;
+    }
+
+    .gallery-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.4s ease; /* Smooth transform */
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.3) 60%, transparent 100%); /* Gradient overlay */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; /* Align text to bottom */
+      align-items: flex-start; /* Align text to left */
+      padding: 1.5rem;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-item:hover .gallery-image {
+      transform: scale(1.15); /* Enhanced hover zoom */
+      filter: brightness(0.8);
+    }
+
+    .gallery-title {
+      color: var(--white);
+      font-size: 1.3rem; /* Increased size */
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: transform 0.4s 0.1s ease, opacity 0.4s 0.1s ease;
+    }
+
+    .gallery-subtitle {
+      color: var(--light-alt);
+      font-size: 0.95rem; /* Increased size */
+      transform: translateY(20px);
+      opacity: 0;
+      transition: transform 0.4s 0.2s ease, opacity 0.4s 0.2s ease;
+    }
+    
+    .gallery-item:hover .gallery-title,
+    .gallery-item:hover .gallery-subtitle {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+
+    /* CONTACT SECTION */
+    .contact {
+      background: var(--white);
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr; /* Adjusted column ratio */
+      gap: 4rem;
+      align-items: flex-start; /* Align to top */
+    }
+
+    .contact-info {
+      color: var(--secondary);
+    }
+
+    .contact-heading {
+      font-size: 2.2rem; /* Increased size */
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-text {
+      margin-bottom: 2.5rem; /* Increased margin */
+      color: var(--secondary);
+      line-height: 1.8; /* Improved readability */
+    }
+
+    .contact-method {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.8rem; /* Increased margin */
+      transition: var(--transition);
+    }
+    .contact-method:hover {
+        transform: translateX(5px);
+    }
+
+    .contact-icon {
+      font-size: 1.8rem; /* Increased size */
+      color: var(--accent);
+      margin-right: 1.2rem; /* Increased margin */
+      width: 30px; /* Ensure alignment */
+      text-align: center;
+    }
+
+    .contact-detail {
+      color: var(--secondary);
+      font-weight: 500; /* Bolder detail */
+    }
+
+    .contact-form {
+      background: var(--light);
+      padding: 3rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .form-group {
+      margin-bottom: 1.8rem; /* Increased margin */
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 0.7rem; /* Increased margin */
+      font-weight: 600; /* Bolder label */
+      color: var(--primary);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 1.2rem; /* Increased padding */
+      border: 1px solid var(--light-alt);
+      border-radius: calc(var(--radius) / 1.5); /* Slightly less radius */
+      background: var(--white);
+      color: var(--primary);
+      font-family: inherit;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      border-color: var(--accent);
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(8, 145, 178, 0.15); /* Enhanced focus */
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px; /* Increased height */
+    }
+
+    .btn-block {
+      width: 100%;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--primary);
+      color: var(--light);
+      padding: 5rem 0 2rem; /* Increased padding */
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted minmax */
+      gap: 3.5rem; /* Increased gap */
+      margin-bottom: 3.5rem; /* Increased margin */
+    }
+
+    .footer-logo {
+      color: var(--white);
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      display: inline-flex; /* Align with icon */
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+    .footer-logo .logo-icon {
+        font-size: 2.2rem;
+    }
+
+    .footer-about {
+      color: var(--light-alt);
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
+    .footer-heading {
+      color: var(--white);
+      font-size: 1.3rem; /* Increased size */
+      font-weight: 600;
+      margin-bottom: 1.8rem; /* Increased margin */
+      position: relative;
+    }
+    .footer-heading::after { /* Underline for heading */
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 40px;
+        height: 2px;
+        background: var(--accent);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-link {
+      margin-bottom: 1rem; /* Increased margin */
+    }
+
+    .footer-link a {
+      color: var(--light-alt);
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .footer-link a:hover {
+      color: var(--accent-light);
+      transform: translateX(5px);
+    }
+    .footer-link a::before { /* Subtle bullet */
+        content: '›';
+        margin-right: 0.5em;
+        color: var(--accent);
+    }
+
+
+    .footer-social {
+      display: flex;
+      gap: 1.2rem; /* Increased gap */
+      margin-top: 1.5rem;
+    }
+
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px; /* Increased size */
+      height: 44px;
+      border-radius: 50%;
+      background: var(--secondary);
+      color: var(--light);
+      font-size: 1.3rem; /* Increased size */
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .social-icon:hover {
+      background: var(--accent);
+      transform: translateY(-4px) scale(1.1); /* Enhanced hover */
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--secondary);
+      padding-top: 2rem; /* Increased padding */
+      text-align: center;
+      color: var(--light-alt);
+      font-size: 0.95rem; /* Increased size */
+    }
+    .footer-bottom a {
+      color: var(--accent-light);
+      text-decoration: none;
+    }
+    .footer-bottom a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* THEME TOGGLE */
+    .theme-toggle {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 1001; /* Ensure it's above most elements */
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 5px 15px rgba(8, 145, 178, 0.3);
+      transition: var(--transition);
+    }
+
+    .theme-toggle:hover {
+      background: var(--accent-light);
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 10px 20px rgba(8, 145, 178, 0.4);
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+
+    /* MEDIA QUERIES */
+    @media screen and (max-width: 992px) {
+      .hero-headline {
+        font-size: 3rem;
+      }
+
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--white);
         flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transform: translateX(-100%);
+        transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        z-index: 1050; /* Below toggle, above header content */
       }
-      .footer-social {
-        margin-bottom: 0.5rem;
+      .nav-links.active {
+        transform: translateX(0);
       }
+      .nav-link {
+        font-size: 1.5rem; /* Larger for mobile menu */
+      }
+      .nav-link:after {
+        bottom: -8px;
+      }
+
+      .mobile-menu-toggle {
+        display: block;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .hero {
+        padding: 160px 0 90px;
+        margin-top: 0; /* Header might not be fixed or different height handling */
+      }
+      header { /* Example for mobile header handling if needed */
+          height: 70px; 
+      }
+      .nav-container {
+          height: 70px;
+      }
+      .logo-text { font-size: 1.3rem; }
+      .logo-icon { font-size: 1.8rem; }
+
+
+      .hero-headline {
+        font-size: 2.5rem;
+      }
+
+      .section-title {
+        font-size: 2.2rem;
+      }
+      .section-subtitle { font-size: 1.1rem; margin-bottom: 3.5rem;}
+
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr; /* Stack footer columns */
+        gap: 2.5rem;
+      }
+      .footer-heading { text-align: center; }
+      .footer-heading::after { left: 50%; transform: translateX(-50%); }
+      .footer-links { text-align: center; }
+      .footer-link a::before { display: none; } /* Remove bullet on mobile */
+      .footer-social { justify-content: center; }
+    }
+
+    @media screen and (max-width: 576px) {
+      .container {
+        padding: 0 1.5rem;
+      }
+
+      .hero-headline {
+        font-size: 2.1rem;
+      }
+
+      .hero-subheader {
+        font-size: 1rem;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+        width: 90%; /* More contained on small screens */
+        margin: 0 auto;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 0.9rem 2rem;
+      }
+      
+      .section { padding: 80px 0; }
+      .section-title { font-size: 1.9rem; }
+      .section-subtitle { font-size: 1rem; margin-bottom: 3rem;}
+
+
+      .contact-form {
+        padding: 2.5rem 1.5rem;
+      }
+
+      .theme-toggle {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+      }
+      .footer { padding: 4rem 0 1.5rem; }
     }
   </style>
 </head>
 <body>
-  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">🌙</button>
+  <header id="header">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <span class="logo-icon">🛞</span>Rim Revive
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+        ☰
+      </button>
+    </div>
+  </header>
+
   <section class="hero">
-    <div class="hero-content">
-      <h1 class="hero-headline">Transform Your Ride with Stunning Rims</h1>
-      <p class="hero-subheader">Expert rim painting, repair, and protection for a bold, refreshed look. Drive in style and confidence!</p>
-      <a href="#contact" class="cta-btn">Get a Free Quote</a>
+    <div class="container hero-container">
+      <h1 class="hero-headline">Transform Your Wheels with <span>Premium Rim Painting</span></h1>
+      <p class="hero-subheader">Professional rim painting, restoration and protection services to elevate your vehicle's appearance and protect your investment with industry-leading quality.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Get a Free Quote <span style="font-size: 0.8em; margin-left: 5px;">→</span></a>
+        <a href="#gallery" class="btn btn-secondary">View Our Work</a>
+      </div>
     </div>
   </section>
-  <header>
-    <h1>Rim Revive</h1>
-    <p>Premium Rim Painting & Restoration</p>
-    <a href="#contact" class="cta-btn">Get a Free Quote</a>
-  </header>
-  <main>
-    <section id="services">
-      <h2 class="section-title">Our Services</h2>
-      <div class="services">
+
+  <section id="services" class="services section section-hidden">
+    <div class="container">
+      <h2 class="section-title">Our Core Services</h2>
+      <p class="section-subtitle">We provide premium rim painting and restoration services, tailored to enhance your vehicle's appearance and longevity with meticulous care.</p>
+      
+      <div class="services-grid">
         <div class="service-card">
-          <i>🎨</i>
-          <h3>Custom Rim Painting</h3>
-          <p>Transform your wheels with vibrant, durable colors and finishes. Choose from gloss, matte, or metallic.</p>
+          <div class="service-content">
+            <span class="service-icon">🎨</span>
+            <h3 class="service-title">Custom Rim Painting</h3>
+            <p class="service-description">Transform your wheels with vibrant, durable colors. Choose from gloss, matte, metallic, or bespoke finishes to perfectly match your style.</p>
+            <a href="#contact" class="service-link">Explore Finishes <span>→</span></a>
+          </div>
         </div>
+        
         <div class="service-card">
-          <i>🛠️</i>
-          <h3>Rim Repair</h3>
-          <p>We fix curb rash, scratches, and chips to restore your rims to like-new condition before painting.</p>
+          <div class="service-content">
+            <span class="service-icon">🛠️</span>
+            <h3 class="service-title">Expert Rim Repair</h3>
+            <p class="service-description">We meticulously fix curb rash, scratches, dents, and chips, restoring your rims to pristine condition before any custom painting.</p>
+            <a href="#contact" class="service-link">Repair Details <span>→</span></a>
+          </div>
         </div>
+        
         <div class="service-card">
-          <i>✨</i>
-          <h3>Protective Coating</h3>
-          <p>Long-lasting ceramic and clear coats to protect your rims from the elements and road debris.</p>
+          <div class="service-content">
+            <span class="service-icon">✨</span>
+            <h3 class="service-title">Advanced Protective Coating</h3>
+            <p class="service-description">Apply long-lasting ceramic or clear coats to shield your rims from road damage, brake dust, and environmental elements.</p>
+            <a href="#contact" class="service-link">Protection Options <span>→</span></a>
+          </div>
         </div>
-      </div>
-    </section>
-    <section id="gallery">
-      <h2 class="section-title">Gallery</h2>
-      <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=400&q=80" alt="Painted Rim 1">
-        <img src="https://images.unsplash.com/photo-1511918984145-48de785d4c4e?auto=format&fit=crop&w=400&q=80" alt="Painted Rim 2">
-        <img src="https://images.unsplash.com/photo-1465146344425-f00d5f8b7885?auto=format&fit=crop&w=400&q=80" alt="Painted Rim 3">
-        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=400&q=80" alt="Painted Rim 4">
-      </div>
-    </section>
-    <section id="contact">
-      <h2 class="section-title">Contact Us</h2>
-      <form class="contact-form" autocomplete="off">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
-  </main>
-  <footer>
-    <div class="footer-content">
-      <div class="footer-contact">
-        <strong>Contact:</strong> rimrevive@example.com &nbsp;|&nbsp; (555) 123-4567
-      </div>
-      <div class="footer-social">
-        <a href="#" aria-label="Instagram" class="footer-icon">&#x1F4F7;</a>
-        <a href="#" aria-label="Facebook" class="footer-icon">&#x1F426;</a>
-        <a href="#" aria-label="Twitter" class="footer-icon">&#x1F426;</a>
       </div>
     </div>
-    <div class="footer-copy">&copy; 2024 Rim Revive. All rights reserved.</div>
+  </section>
+
+  <section id="gallery" class="gallery section section-hidden">
+    <div class="container">
+      <h2 class="section-title">Our Portfolio Showcase</h2>
+      <p class="section-subtitle">Browse through our recent projects. Witness the quality craftsmanship and transformative results we deliver for every client.</p>
+      
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=600&q=80" alt="Custom Metallic Finished Rim" class="gallery-image">
+          <div class="gallery-overlay">
+            <h3 class="gallery-title">Custom Metallic Finish</h3>
+            <p class="gallery-subtitle">BMW M3 Competition</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1511918984145-48de785d4c4e?auto=format&fit=crop&w=600&q=80" alt="Matte Black Finished Rim" class="gallery-image">
+          <div class="gallery-overlay">
+            <h3 class="gallery-title">Matte Black Elegance</h3>
+            <p class="gallery-subtitle">Audi RS6 Avant</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1465146344425-f00d5f8b7885?auto=format&fit=crop&w=600&q=80" alt="Two-Tone Custom Designed Rim" class="gallery-image">
+          <div class="gallery-overlay">
+            <h3 class="gallery-title">Two-Tone Custom Design</h3>
+            <p class="gallery-subtitle">Mercedes AMG GT</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=600&q=80" alt="Ceramic Coated Rim" class="gallery-image">
+          <div class="gallery-overlay">
+            <h3 class="gallery-title">Durable Ceramic Coating</h3>
+            <p class="gallery-subtitle">Porsche 911 Carrera</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact section section-hidden">
+    <div class="container">
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="section-subtitle">Ready to transform your wheels or have questions? Reach out to discuss your project, get a personalized quote, or schedule your service.</p>
+      
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3 class="contact-heading">Let's Discuss Your Vision</h3>
+          <p class="contact-text">Our team of experts is eager to help you achieve the perfect look for your vehicle. We're committed to quality and customer satisfaction from start to finish.</p>
+          
+          <div class="contact-method">
+            <span class="contact-icon">📞</span>
+            <span class="contact-detail">(555) 123-4567</span>
+          </div>
+          
+          <div class="contact-method">
+            <span class="contact-icon">✉️</span>
+            <span class="contact-detail">contact@rimrevive.com</span>
+          </div>
+          
+          <div class="contact-method">
+            <span class="contact-icon">📍</span>
+            <span class="contact-detail">123 Wheel Street, Automotive City, AC 12345</span>
+          </div>
+        </div>
+        
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="e.g., John Doe" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="e.g., john.doe@example.com" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone" class="form-label">Phone Number (Optional)</label>
+            <input type="tel" id="phone" name="phone" class="form-control" placeholder="e.g., (555) 123-4567">
+          </div>
+          
+          <div class="form-group">
+            <label for="message" class="form-label">Your Message / Inquiry</label>
+            <textarea id="message" name="message" class="form-control" rows="5" placeholder="Tell us about your rims, desired finish, or any questions..." required></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-block">Send Inquiry <span style="font-size: 0.8em; margin-left: 5px;">→</span></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div>
+          <a href="#" class="footer-logo">
+            <span class="logo-icon">🛞</span>Rim Revive
+          </a>
+          <p class="footer-about">Premium rim painting, repair, and protection services for automotive enthusiasts who demand the best for their wheels.</p>
+          <div class="footer-social">
+            <a href="#" class="social-icon" aria-label="Facebook">FB</a>
+            <a href="#" class="social-icon" aria-label="Instagram">IG</a>
+            <a href="#" class="social-icon" aria-label="Twitter">TW</a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="#header">Home</a></li>
+            <li class="footer-link"><a href="#services">Services</a></li>
+            <li class="footer-link"><a href="#gallery">Gallery</a></li>
+            <li class="footer-link"><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-heading">Our Services</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="#services">Custom Painting</a></li>
+            <li class="footer-link"><a href="#services">Rim Repair</a></li>
+            <li class="footer-link"><a href="#services">Protective Coating</a></li>
+            <li class="footer-link"><a href="#contact">Get a Quote</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-heading">Reach Us</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><span>📞 (555) 123-4567</span></li>
+            <li class="footer-link"><span>✉️ contact@rimrevive.com</span></li>
+            <li class="footer-link"><span>📍 123 Wheel St, Auto City</span></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; ${new Date().getFullYear()} Rim Revive. All Rights Reserved. | <a href="#" aria-label="Privacy Policy">Privacy Policy</a> | <a href="#" aria-label="Terms of Service">Terms of Service</a></p>
+      </div>
+    </div>
   </footer>
+
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">🌙</button>
+
   <script>
     // Theme toggle logic
-    const toggleBtn = document.getElementById('themeToggle');
-    const darkTheme = {
-      '--primary': '#181a20',
-      '--secondary': '#23262f',
-      '--accent': '#00adb5',
-      '--light': '#23262f',
-      '--white': '#181a20',
-    };
-    const lightTheme = {
-      '--primary': '#222831',
-      '--secondary': '#393e46',
-      '--accent': '#00adb5',
-      '--light': '#eeeeee',
-      '--white': '#fff',
-    };
-    function setTheme(theme) {
-      Object.entries(theme).forEach(([key, value]) => {
-        document.documentElement.style.setProperty(key, value);
-      });
-    }
-    function updateToggleIcon(isDark) {
-      toggleBtn.textContent = isDark ? '☀️' : '🌙';
-    }
-    function getStoredTheme() {
-      return localStorage.getItem('rimTheme');
-    }
-    function storeTheme(isDark) {
-      localStorage.setItem('rimTheme', isDark ? 'dark' : 'light');
-    }
-    function applyStoredTheme() {
-      const stored = getStoredTheme();
-      if (stored === 'dark') {
-        setTheme(darkTheme);
-        updateToggleIcon(true);
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const htmlEl = document.documentElement;
+    
+    function applyTheme(isDark) {
+      if (isDark) {
+        htmlEl.setAttribute('data-theme', 'dark');
+        themeToggleBtn.textContent = '☀️';
+        themeToggleBtn.setAttribute('aria-label', 'Switch to light mode');
       } else {
-        setTheme(lightTheme);
-        updateToggleIcon(false);
+        htmlEl.removeAttribute('data-theme');
+        themeToggleBtn.textContent = '🌙';
+        themeToggleBtn.setAttribute('aria-label', 'Switch to dark mode');
       }
     }
-    toggleBtn.addEventListener('click', () => {
-      const isDark = getStoredTheme() !== 'dark';
-      setTheme(isDark ? darkTheme : lightTheme);
-      updateToggleIcon(isDark);
-      storeTheme(isDark);
+    
+    function getInitialTheme() {
+      const storedTheme = localStorage.getItem('rimTheme');
+      if (storedTheme !== null) {
+        return storedTheme === 'dark';
+      }
+      // Default to system preference if no theme is stored
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+    
+    function storeThemePreference(isDark) {
+      localStorage.setItem('rimTheme', isDark ? 'dark' : 'light');
+    }
+    
+    // Apply stored or system theme on load
+    let isDarkMode = getInitialTheme();
+    applyTheme(isDarkMode);
+    
+    // Toggle theme on click
+    themeToggleBtn.addEventListener('click', () => {
+      isDarkMode = !isDarkMode;
+      applyTheme(isDarkMode);
+      storeThemePreference(isDarkMode);
     });
-    applyStoredTheme();
+
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        // Only update if no explicit theme is set by user
+        if (localStorage.getItem('rimTheme') === null) {
+            isDarkMode = e.matches;
+            applyTheme(isDarkMode);
+        }
+    });
+    
+    // Mobile Menu Toggle
+    const mobileMenuToggleBtn = document.getElementById('mobileMenuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    mobileMenuToggleBtn.addEventListener('click', () => {
+      const isExpanded = navLinks.classList.toggle('active');
+      mobileMenuToggleBtn.setAttribute('aria-expanded', isExpanded);
+      mobileMenuToggleBtn.textContent = isExpanded ? '✕' : '☰'; // Change icon
+      document.body.style.overflow = isExpanded ? 'hidden' : ''; // Prevent scrolling when menu is open
+    });
+
+    // Close mobile menu when a link is clicked
+    navLinks.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navLinks.classList.contains('active')) {
+          navLinks.classList.remove('active');
+          mobileMenuToggleBtn.setAttribute('aria-expanded', 'false');
+          mobileMenuToggleBtn.textContent = '☰';
+          document.body.style.overflow = '';
+        }
+      });
+    });
+
+    // Smooth scroll for navigation links & offset for fixed header
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === "#" || href === "") return; // Ignore empty or just # links
+        
+        const targetElement = document.querySelector(href);
+        if (targetElement) {
+          e.preventDefault();
+          const headerOffset = document.getElementById('header').offsetHeight || 80;
+          const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - headerOffset;
+    
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Scroll-triggered animations for sections
+    const sections = document.querySelectorAll('.section-hidden');
+    const observerOptions = {
+      root: null, // relative to document viewport
+      rootMargin: '0px',
+      threshold: 0.1 // 10% of the item is visible
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('section-visible');
+          entry.target.classList.remove('section-hidden');
+          // observer.unobserve(entry.target); // Optional: stop observing once visible
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+    // Update copyright year
+    const footerBottom = document.querySelector('.footer-bottom p');
+    if (footerBottom) {
+        footerBottom.innerHTML = `&copy; ${new Date().getFullYear()} Rim Revive. All Rights Reserved. | <a href="#" aria-label="Privacy Policy">Privacy Policy</a> | <a href="#" aria-label="Terms of Service">Terms of Service</a>`;
+    }
+
   </script>
 </body>
 </html> 
